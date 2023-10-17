@@ -9,13 +9,15 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { LandingComponent } from './components/landing/landing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CabecalhoComponent,
     FooterComponent,
-    FormComponent
+    FormComponent,
+    LandingComponent
 
   ],
   imports: [
