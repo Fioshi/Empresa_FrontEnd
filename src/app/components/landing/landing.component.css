@@ -10,11 +10,10 @@
   }
 }
 
-
 @media screen and (max-width: 425px ) {
   .mainContainer{
     height: 100em;
-    width: 43.4em;
+    width: 50.8em;
   }
 
   .img{
@@ -34,7 +33,6 @@
     width: 60%;
   }
 }
-
 
 @keyframes colorChange {
   0% {
