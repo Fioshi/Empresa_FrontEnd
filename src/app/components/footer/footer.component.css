@@ -1,5 +1,19 @@
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 425px ) {
   .footer{
-    width: 153vw;
+    height: 3em;
+    width: 43.4em;
+  }
+
+  .img{
+    align-items: center;
+    width: 60%;
   }
 }
+
+@media screen and (max-width: 375px ) {
+  .footer{
+    height: 2em;
+    width: 43.4em;
+  }
+}
+

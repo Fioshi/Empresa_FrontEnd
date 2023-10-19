@@ -1,10 +1,20 @@
 
-
-
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 425px ) {
   .mainContainer{
-    height: 139vh;
-    width: 153vw;
+    height: 100em;
+    width: 43.4em;
+  }
+
+  .img{
+    align-items: center;
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 375px ) {
+  .mainContainer{
+    height: 100em;
+    width: 43.4em;
   }
 
   .img{
