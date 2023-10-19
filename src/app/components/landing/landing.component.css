@@ -1,3 +1,19 @@
+
+
+
+@media screen and (max-width: 425px) {
+  .mainContainer{
+    height: 139vh;
+    width: 153vw;
+  }
+
+  .img{
+    align-items: center;
+    width: 60%;
+  }
+}
+
+
 @keyframes colorChange {
   0% {
     background-color: #B6FFFA;
