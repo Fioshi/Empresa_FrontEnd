@@ -1,6 +1,20 @@
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 763px ) {
   .opcoesContainer{
-    height: 139vh;
-    width: 153vw;
+    height: 92.1em;
+    width: 50.8em;
+  }
+}
+
+@media screen and (max-width: 426px ) {
+  .opcoesContainer{
+    height: 92.1em;
+    width: 50.8em;
+  }
+}
+
+@media screen and (max-width: 376px ) {
+  .opcoesContainer{
+    height: 106.8em;
+    width: 50.8em;
   }
 }

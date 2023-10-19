@@ -1,6 +1,21 @@
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 762px ) {
   .formContainer{
-    height: 139vh;
-    width: 153vw;
+    height: 100em;
+    width: 50.8em;
   }
 }
+
+@media screen and (max-width: 425px ) {
+  .formContainer{
+    height: 100em;
+    width: 50.8em;
+  }
+}
+
+@media screen and (max-width: 375px ) {
+  .formContainer{
+    height: 100em;
+    width: 50.8em;
+    }
+  }
+

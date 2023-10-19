@@ -1,19 +1,21 @@
+@media screen and (max-width: 762px ) {
+  .footer{
+    height: 3em;
+    width: 50.8em;
+  }
+}
+
 @media screen and (max-width: 425px ) {
   .footer{
     height: 3em;
-    width: 43.4em;
-  }
-
-  .img{
-    align-items: center;
-    width: 60%;
+    width: 50.8em;
   }
 }
 
 @media screen and (max-width: 375px ) {
   .footer{
     height: 2em;
-    width: 43.4em;
+    width: 50.8em;
   }
 }
 

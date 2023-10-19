@@ -1,3 +1,15 @@
+@media screen and (max-width: 762px ) {
+  .mainContainer{
+    height: 100em;
+    width: 50.8em;
+  }
+
+  .img{
+    align-items: center;
+    width: 60%;
+  }
+}
+
 
 @media screen and (max-width: 425px ) {
   .mainContainer{

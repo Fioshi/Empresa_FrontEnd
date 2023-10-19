@@ -9,12 +9,26 @@
   right: 15px;
 }
 
-@media screen and (max-width: 425px) {
+
+@media screen and (max-width: 762px ) {
   .listarContainer{
-    height: 139vh;
-    width: 153vw;
+    height: 92.1em;
+    width: 50.8em;
   }
 }
 
+@media screen and (max-width: 425px ) {
+  .listarContainer{
+    height: 92.1em;
+    width: 50.8em;
+  }
+}
+
+@media screen and (max-width: 376px ) {
+  .listarContainer{
+    height: 106.8em;
+    width: 50.8em;
+  }
+}
 
 
