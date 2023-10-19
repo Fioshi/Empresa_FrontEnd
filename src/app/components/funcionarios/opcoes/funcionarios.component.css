@@ -1,5 +1,6 @@
 @media screen and (max-width: 425px) {
-  .footer{
+  .opcoesContainer{
+    height: 139vh;
     width: 153vw;
   }
 }

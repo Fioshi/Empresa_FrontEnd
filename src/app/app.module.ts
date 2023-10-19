@@ -9,24 +9,28 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { LandingComponent } from './components/landing/landing.component';
+import { FuncionariosComponent } from './components/funcionarios/opcoes/funcionarios.component';
+import { ListarComponent } from './components/funcionarios/listar/listar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CabecalhoComponent,
     FooterComponent,
-    FormComponent
-
+    FormComponent,
+    LandingComponent,
+    FuncionariosComponent,
+    ListarComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     RouterModule,
-    AppRoutingModule
-
+    AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

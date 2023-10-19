@@ -1,0 +1,20 @@
+.card {
+  position: relative;
+}
+
+.excluir {
+  width: 1.8em;
+  position: absolute;
+  top: 110px;
+  right: 15px;
+}
+
+@media screen and (max-width: 425px) {
+  .listarContainer{
+    height: 139vh;
+    width: 153vw;
+  }
+}
+
+
+
