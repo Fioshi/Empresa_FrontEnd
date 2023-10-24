@@ -3,32 +3,36 @@
 }
 
 .excluir {
-  width: 1.8em;
+  width: 1.6em;
   position: absolute;
-  top: 110px;
-  right: 15px;
+  top: 135px;
+  right: 20px;
 }
 
+.editar {
+  width: 1.6em;
+  position: absolute;
+  top: 135px;
+  right: 60px;
+}
 
-@media screen and (max-width: 762px ) {
-  .listarContainer{
+@media screen and (max-width: 762px) {
+  .listarContainer {
     height: 92.1em;
     width: 50.8em;
   }
 }
 
-@media screen and (max-width: 425px ) {
-  .listarContainer{
+@media screen and (max-width: 425px) {
+  .listarContainer {
     height: 92.1em;
     width: 50.8em;
   }
 }
 
-@media screen and (max-width: 376px ) {
-  .listarContainer{
+@media screen and (max-width: 376px) {
+  .listarContainer {
     height: 106.8em;
     width: 50.8em;
   }
 }
-
-

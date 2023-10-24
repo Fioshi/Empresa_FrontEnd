@@ -7,6 +7,9 @@
     height: 6em;
     width: 50.8em;
   }
+  /* ul{
+    font-size: 1.3rem;
+  } */
 }
 
 @media screen and (max-width: 425px ) {

@@ -17,6 +17,7 @@ import {
 })
 export class FormComponent {
   funcionario: Funcionario = {
+    id: 0,
     nome: '',
     sobrenome: '',
     cpf: '',
@@ -34,7 +35,7 @@ export class FormComponent {
       this.service.criar(this.funcionario).subscribe((Response) => {
         alert('Cadastrado com sucesso!');
         this.router.navigate(['/listaFuncionarios']);
-      })
+      });
     } catch (e) {
       alert(e);
     }

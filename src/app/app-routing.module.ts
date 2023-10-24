@@ -4,6 +4,8 @@ import { FormComponent } from './components/form/criar-funcionario/form.componen
 import { LandingComponent } from './components/landing/landing.component';
 import { FuncionariosComponent } from './components/funcionarios/opcoes/funcionarios.component';
 import { ListarComponent } from './components/funcionarios/listar/listar.component';
+import { EditarComponent } from './components/funcionarios/editar/editar.component';
+import { ExcluirComponent } from './components/funcionarios/excluir/excluir.component';
 
 const routes: Routes = [
   {
@@ -27,6 +29,14 @@ const routes: Routes = [
     path: 'inicio',
     component: LandingComponent,
   },
+  {
+    path:'editarFuncionario/:id',
+    component: EditarComponent
+  },
+  {
+    path:'excluirFuncionario/:id',
+    component: ExcluirComponent
+  }
 ];
 
 @NgModule({

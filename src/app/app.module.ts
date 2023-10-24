@@ -12,6 +12,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { LandingComponent } from './components/landing/landing.component';
 import { FuncionariosComponent } from './components/funcionarios/opcoes/funcionarios.component';
 import { ListarComponent } from './components/funcionarios/listar/listar.component';
+import { EditarComponent } from './components/funcionarios/editar/editar.component';
+import { ExcluirComponent } from './components/funcionarios/excluir/excluir.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { ListarComponent } from './components/funcionarios/listar/listar.compone
     LandingComponent,
     FuncionariosComponent,
     ListarComponent,
+    EditarComponent,
+    ExcluirComponent,
   ],
   imports: [
     BrowserModule,

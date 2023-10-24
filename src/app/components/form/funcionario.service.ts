@@ -15,9 +15,8 @@ export class FuncionarioService {
     return this.http.post<Funcionario>(this.API, funcionario);
   }
 
-  editar(funcionario: Funcionario): Observable<Funcionario>{
-    const url = `${this.API}/${funcionario.id}`;
-    return this.http.put<Funcionario>(url, funcionario);
+  editar(funcionario: Funcionario): Observable<Funcionario> {
+    return this.http.put<Funcionario>(this.API, funcionario);
   }
 
   listar(): Observable<Funcionario[]> {
@@ -27,5 +26,10 @@ export class FuncionarioService {
   buscarPorId(id: number): Observable<Funcionario> {
     const url = `${this.API}/${id}`;
     return this.http.get<Funcionario>(url);
+  }
+
+  excluir(id: number): Observable<Funcionario> {
+    const url = `${this.API}/${id}`;
+    return this.http.delete<Funcionario>(url);
   }
 }

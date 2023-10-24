@@ -1,9 +1,8 @@
-export interface Funcionario
-{
-  id?: number,
+export interface Funcionario {
+  id: number;
   nome: string;
   sobrenome: string;
-  cpf:string;
-  email:string
-  departamento?: number
+  cpf: string;
+  email: string;
+  departamento?: number;
 }
