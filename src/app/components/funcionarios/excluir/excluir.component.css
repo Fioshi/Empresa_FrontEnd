@@ -1,0 +1,27 @@
+.deleting{
+  background-color: rgb(11, 55, 136);
+  /* opacity: 0.5; */
+}
+
+@media screen and (max-width: 762px ) {
+  .opcoesContainer{
+    height: 100em;
+    width: 50.8em;
+  }
+}
+
+@media screen and (max-width: 425px ) {
+  .opcoesContainer{
+    height: 100em;
+    width: 50.8em;
+  }
+}
+
+@media screen and (max-width: 375px ) {
+  .opcoesContainer{
+    height: 100em;
+    width: 50.8em;
+    }
+  }
+
+

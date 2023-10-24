@@ -1,0 +1,18 @@
+<section class="opcoesContainer h-screen deleting flex items-center justify-center flex-col">
+  <div class="h-96 w-3/5 bg-blue-500 flex items-center justify-center flex-col rounded">
+    <p class="text-center text-white text-3xl">O funcionario sera <b>desativado</b> do sistema. Tem certeza que deseja
+      fazer isso ?</p>
+    <div class=" flex items-center justify-center sm:flex-row">
+      <button
+        class="m-10 bg-blue-200 w-52 text-3xl text-white m-6 p-2 bg-blue-600 rounded-lg hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
+        (click)="excluirFuncionario()">
+        Sim
+      </button>
+      <button
+        class="m-10 text-3xl w-52 text-white m-6 p-2 bg-blue-600 rounded-lg hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
+        (click)="cancelar()">
+        Cancelar
+      </button>
+    </div>
+  </div>
+</section>
