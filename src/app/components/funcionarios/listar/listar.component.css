@@ -1,3 +1,24 @@
+.listarContainer{
+  height: 100vh;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.lupa {
+  width: 30px;
+}
+
+.buscar{
+  position: absolute;
+  top: 40px;
+}
+
+.buscar input{
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+
+
 .card {
   position: relative;
 }
@@ -14,6 +35,10 @@
   position: absolute;
   top: 135px;
   right: 60px;
+}
+
+.botao_desabilitado {
+  background-color: gray;
 }
 
 @media screen and (max-width: 762px) {

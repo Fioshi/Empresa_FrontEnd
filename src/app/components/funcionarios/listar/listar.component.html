@@ -1,22 +1,38 @@
-<div class="flex items-center justify-center flex-col p-10 bg-blue-200 h-screen listarContainer"
-  *ngIf="listaFuncionario.length > 0, else semFuncionario">
+<div class="flex items-center justify-center flex-col p-10 bg-blue-200 h-fit listarContainer"
+  >
+  <div class="flex items-center justify-center buscar">
+    <input
+      class="busca text-center"
+      placeholder="Digite o CPF para busca"
+      autofocus
+      type="search"
+      [(ngModel)]="filtro"
+      (keyup)="buscarCpf()"
+      >
+    <img class="lupa m-2" src="../../../../assets/imgs/lupa.png" alt="">
+  </div>
   <div *ngFor="let funcionario of listaFuncionario"
-    class="card border w-96 m-5 h-48 flex items-center justify-center flex-col bg-blue-600 text-xl text-white rounded-md">
+    class="card w-96 m-5 h-48 flex items-center justify-center flex-col bg-blue-600 text-xl text-white rounded-md">
     <p><b>ID: </b>{{funcionario.id}}</p>
     <p><b>Nome: </b>{{funcionario.nome}} {{funcionario.sobrenome}}</p>
     <p><b>Email: </b>{{funcionario.email}}</p>
     <p><b>departamento: </b>{{funcionario.departamento}}</p>
     <p><b>CPF: </b>{{funcionario.cpf}}</p>
-    <div>
+    <div *ngIf="funcionario.status, else desativado">
       <button><img class="excluir" src="../../../../assets/imgs/excluir.png" alt="botão de excluir"
           routerLink="/excluirFuncionario/{{funcionario.id}}"></button>
       <button><img class="editar" src="../../../../assets/imgs/editar.png" alt="botão de editar"
           routerLink="/editarFuncionario/{{funcionario.id}}"></button>
     </div>
+    <ng-template #desativado>
+      <p>Usuario desativado</p>
+    </ng-template>
   </div>
-</div>
 
-<ng-template #semFuncionario>
+</div>
+<app-botao-carregar-mais [haMaisFuncionarios]="haMaisFuncionarios" (click)="carregarMaisFuncionarios()">
+</app-botao-carregar-mais>
+<!-- <ng-template #semFuncionario>
   <div class="h-screen flex items-center justify-center bg-blue-200 listarContainer">
     <div class="border w-1/8 m-5  flex items-center flex-col text-center bg-blue-600 text-white rounded-md">
       <h2 class="text-2xl p-10">Aparentemente não há funcionarios na base de dados</h2>
@@ -27,4 +43,4 @@
       </button>
     </div>
   </div>
-</ng-template>
+</ng-template> -->
