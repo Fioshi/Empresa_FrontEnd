@@ -15,6 +15,7 @@ export class ExcluirComponent {
     sobrenome: '',
     cpf: '',
     email: '',
+    status: true
   };
 
   constructor(

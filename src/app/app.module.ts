@@ -6,7 +6,7 @@ import { CabecalhoComponent } from './components/cabecalho/cabecalho.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormComponent } from './components/form/criar-funcionario/form.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { LandingComponent } from './components/landing/landing.component';
@@ -14,6 +14,7 @@ import { FuncionariosComponent } from './components/funcionarios/opcoes/funciona
 import { ListarComponent } from './components/funcionarios/listar/listar.component';
 import { EditarComponent } from './components/funcionarios/editar/editar.component';
 import { ExcluirComponent } from './components/funcionarios/excluir/excluir.component';
+import { BotaoCarregarMaisComponent } from './components/funcionarios/listar/botao-carregar-mais/botao-carregar-mais.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ExcluirComponent } from './components/funcionarios/excluir/excluir.comp
     ListarComponent,
     EditarComponent,
     ExcluirComponent,
+    BotaoCarregarMaisComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,7 @@ import { ExcluirComponent } from './components/funcionarios/excluir/excluir.comp
     FormsModule,
     RouterModule,
     AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -5,4 +5,5 @@ export interface Funcionario {
   cpf: string;
   email: string;
   departamento?: number;
+  status: boolean
 }

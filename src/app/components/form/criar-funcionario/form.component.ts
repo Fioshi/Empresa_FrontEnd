@@ -9,6 +9,7 @@ import {
   HttpHeaders,
   HttpResponse,
 } from '@angular/common/http';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -16,28 +17,56 @@ import {
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent {
-  funcionario: Funcionario = {
-    id: 0,
-    nome: '',
-    sobrenome: '',
-    cpf: '',
-    email: '',
-  };
+
+  formulario!: FormGroup;
+
+  ngOnInit(){
+    this.formulario = this.formBuilder.group({
+      nome: ['', Validators.compose([
+        Validators.required,
+        Validators.pattern(/(.|\s)*\S(.|\s)*/),
+      ])],
+      sobrenome: ['', Validators.compose([
+        Validators.required,
+        Validators.pattern(/(.|\s)*\S(.|\s)*/),
+      ])],
+      cpf: ['', Validators.compose([
+        Validators.required,
+        Validators.pattern(/(.|\s)*\S(.|\s)*/),
+        Validators.minLength(11)
+      ])],
+      email:['',Validators.compose([
+        Validators.required,
+        Validators.pattern(/(.|\s)*\S(.|\s)*/),
+      ])],
+      departamento: [, [Validators.required]]
+    })
+  }
 
   constructor(
     private service: FuncionarioService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private formBuilder: FormBuilder
   ) {}
 
   criarFuncionario() {
-    try {
-      this.service.criar(this.funcionario).subscribe((Response) => {
-        alert('Cadastrado com sucesso!');
-        this.router.navigate(['/listaFuncionarios']);
-      });
-    } catch (e) {
-      alert(e);
+    console.log(this.formulario.get('nome')?.errors);
+    if (this.formulario.valid) {
+      try {
+        this.service.criar(this.formulario.value).subscribe((Response) => {
+          alert('Cadastrado com sucesso!');
+          this.router.navigate(['/listaFuncionarios']);
+        });
+      } catch (e) {
+        alert(e);
+      }
     }
+  }
+
+  habilitarBotao(){
+    if (this.formulario.valid)
+      return ''
+    return 'botao_desabilitado'
   }
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Funcionario } from './criar-funcionario/funcionario';
 import { Observable } from 'rxjs';
 
@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class FuncionarioService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   private API = 'http://localhost:8080/api/funcionario';
 
@@ -19,9 +19,22 @@ export class FuncionarioService {
     return this.http.put<Funcionario>(this.API, funcionario);
   }
 
-  listar(): Observable<Funcionario[]> {
-    return this.http.get<Funcionario[]>(this.API);
+  listar(pagina: number, filtro: string): Observable<Funcionario[]> {
+    let params = new HttpParams().set("page", pagina);
+
+    if(filtro.trim().length > 2){
+      let params = new HttpParams().set("keyword", filtro);
+      let url = `${this.API}/busca`
+      return this.http.get<Funcionario[]>(url, { params })
+    }
+    return this.http.get<Funcionario[]>(this.API, { params })
   }
+
+  // buscarPorCpf(pagina: number, cpf: string){
+  //   const url = `${this.API}/busca?page=${pagina}`
+  //   let params = new HttpParams().set("keyword", cpf);
+  //   return this.http.get<Funcionario[]>(url , { params })
+  // }
 
   buscarPorId(id: number): Observable<Funcionario> {
     const url = `${this.API}/${id}`;
