@@ -4,6 +4,7 @@ export interface Funcionario {
   sobrenome: string;
   cpf: string;
   email: string;
+  reuniao?: String;
   departamento?: number;
-  status: boolean
+  status: boolean;
 }

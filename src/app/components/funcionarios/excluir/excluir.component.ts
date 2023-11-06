@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FuncionarioService } from '../../form/funcionario.service';
+import { FuncionarioService } from '../funcionario.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Funcionario } from '../../form/criar-funcionario/funcionario';
+import { Funcionario } from '../funcionario';
 
 @Component({
   selector: 'app-excluir',
@@ -15,7 +15,7 @@ export class ExcluirComponent {
     sobrenome: '',
     cpf: '',
     email: '',
-    status: true
+    status: true,
   };
 
   constructor(
@@ -28,7 +28,7 @@ export class ExcluirComponent {
     const id = this.route.snapshot.paramMap.get('id');
     this.service
       .buscarPorId(parseInt(id!))
-      .subscribe((funcionario) => this.funcionario = funcionario);
+      .subscribe((funcionario) => (this.funcionario = funcionario));
   }
 
   excluirFuncionario() {

@@ -6,6 +6,9 @@ import { FuncionariosComponent } from './components/funcionarios/opcoes/funciona
 import { ListarComponent } from './components/funcionarios/listar/listar.component';
 import { EditarComponent } from './components/funcionarios/editar/editar.component';
 import { ExcluirComponent } from './components/funcionarios/excluir/excluir.component';
+import { CriarReuniaoComponent } from './components/form/criar-reuniao/criar-reuniao/criar-reuniao.component';
+import { OpcoesComponent } from './components/reunioes/opcoes/opcoes/opcoes.component';
+import { ListarReuniaoComponent } from './components/reunioes/listar/listar-reuniao/listar-reuniao.component';
 
 const routes: Routes = [
   {
@@ -36,6 +39,18 @@ const routes: Routes = [
   {
     path:'excluirFuncionario/:id',
     component: ExcluirComponent
+  },
+  {
+    path: 'cadastroReuniao',
+    component: CriarReuniaoComponent
+  },
+  {
+    path: 'opcoesReuniao',
+    component: OpcoesComponent
+  },
+  {
+    path: 'listaReunioes',
+    component: ListarReuniaoComponent
   }
 ];
 

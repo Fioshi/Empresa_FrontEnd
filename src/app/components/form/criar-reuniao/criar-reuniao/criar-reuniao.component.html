@@ -1,0 +1,25 @@
+<section class="min-h-screen flex justify-center items-center flex-row bg-blue-400">
+  <form  class="bg-blue-900 flex justify-center items-center flex-col form rounded">
+    <label class="text-white text-xl m-5" for="funcionarios">Funcionarios</label>
+    <select multiple name="funcionarios" id="funcionarios" [(ngModel)]="reuniao.funcionarios">
+      <option class="rounded-xl w-56"*ngFor="let funcionario of funcionarios" [ngValue]="funcionario.id">{{funcionario.nome}} {{funcionario.sobrenome}}</option>
+    </select>
+
+    <label class="text-white text-xl m-5" for="data">Data</label>
+    <input class="p-2 rounded-md w-60" type="datetime-local" name="data" id="data" [(ngModel)]="reuniao.horario">
+
+    <label class="text-white text-xl m-5" for="tipo">Tipo</label>
+    <select class="p-2 rounded-md w-60" name="tipo" id="tipo" [(ngModel)]="reuniao.tipo">
+      <option value="PLANEJAMENTO">Planejamento</option>
+      <option value="FEEDBACK">Feedback</option>
+      <option value="INFORMACAO">Informação</option>
+      <option value="BRAINSTORM">BrainStorm</option>
+      <option value="TREINAMENTO">Treinamento</option>
+      <option value="OUTROS">Outros</option>
+    </select>
+
+    <button class="py-2 px-5 bg-blue-400 text-white font-bold rounded-lg shadow-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 m-10" (click)="criarReuniao ()">
+      Salvar
+    </button>
+  </form>
+</section>

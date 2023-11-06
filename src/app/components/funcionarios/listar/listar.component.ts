@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Funcionario } from '../../form/criar-funcionario/funcionario';
-import { FuncionarioService } from '../../form/funcionario.service';
+import { Funcionario } from '../funcionario';
+import { FuncionarioService } from '../funcionario.service';
 
 @Component({
   selector: 'app-listar',
@@ -8,7 +8,6 @@ import { FuncionarioService } from '../../form/funcionario.service';
   styleUrls: ['./listar.component.css'],
 })
 export class ListarComponent {
-
   listaFuncionario: Funcionario[] = [];
   paginaAtual: number = 0;
   haMaisFuncionarios: boolean = true;
@@ -17,26 +16,31 @@ export class ListarComponent {
   constructor(private service: FuncionarioService) {}
 
   ngOnInit(): void {
-    this.service.listar(this.paginaAtual, this.filtro).subscribe((listaFuncionario) => {
-      this.listaFuncionario = listaFuncionario;
-    });
+    this.service
+      .listar(this.paginaAtual, this.filtro)
+      .subscribe((listaFuncionario) => {
+        this.listaFuncionario = listaFuncionario;
+      });
   }
 
-    carregarMaisFuncionarios(){
-      this.service.listar(++this.paginaAtual, this.filtro).subscribe((listaFuncionario) => {
+  carregarMaisFuncionarios() {
+    this.service
+      .listar(++this.paginaAtual, this.filtro)
+      .subscribe((listaFuncionario) => {
         this.listaFuncionario.push(...listaFuncionario);
-        if(!listaFuncionario.length)
-          this.haMaisFuncionarios = false;
+        if (!listaFuncionario.length) this.haMaisFuncionarios = false;
       });
-    }
+  }
 
-    buscarCpf(){
-      this.haMaisFuncionarios = true;
-      this.paginaAtual = 1;
-      this.service.listar(this.paginaAtual, this.filtro).subscribe(listaFuncionario =>{
+  buscarCpf() {
+    this.haMaisFuncionarios = true;
+    this.paginaAtual = 0;
+    this.service
+      .listar(this.paginaAtual, this.filtro)
+      .subscribe((listaFuncionario) => {
         this.listaFuncionario = listaFuncionario;
-      })
-    }
+      });
+  }
 
   // proximaPage() {
   //   this.service.listar(this.paginaAtual+=1).subscribe((listaFuncionario) => {

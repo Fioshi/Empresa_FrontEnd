@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
-import { FuncionarioService } from '../funcionario.service';
-import { Funcionario } from './funcionario';
+import { FuncionarioService } from '../../funcionarios/funcionario.service';
+import { Funcionario } from '../../funcionarios/funcionario';
 import { ActivatedRoute, Router } from '@angular/router';
 import {
   HttpErrorResponse,
@@ -17,30 +17,41 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent {
-
   formulario!: FormGroup;
 
-  ngOnInit(){
+  ngOnInit() {
     this.formulario = this.formBuilder.group({
-      nome: ['', Validators.compose([
-        Validators.required,
-        Validators.pattern(/(.|\s)*\S(.|\s)*/),
-      ])],
-      sobrenome: ['', Validators.compose([
-        Validators.required,
-        Validators.pattern(/(.|\s)*\S(.|\s)*/),
-      ])],
-      cpf: ['', Validators.compose([
-        Validators.required,
-        Validators.pattern(/(.|\s)*\S(.|\s)*/),
-        Validators.minLength(11)
-      ])],
-      email:['',Validators.compose([
-        Validators.required,
-        Validators.pattern(/(.|\s)*\S(.|\s)*/),
-      ])],
-      departamento: [, [Validators.required]]
-    })
+      nome: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern(/(.|\s)*\S(.|\s)*/),
+        ]),
+      ],
+      sobrenome: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern(/(.|\s)*\S(.|\s)*/),
+        ]),
+      ],
+      cpf: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern(/(.|\s)*\S(.|\s)*/),
+          Validators.minLength(11),
+        ]),
+      ],
+      email: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern(/(.|\s)*\S(.|\s)*/),
+        ]),
+      ],
+      departamento: [, [Validators.required]],
+    });
   }
 
   constructor(
@@ -64,9 +75,8 @@ export class FormComponent {
     }
   }
 
-  habilitarBotao(){
-    if (this.formulario.valid)
-      return ''
-    return 'botao_desabilitado'
+  habilitarBotao() {
+    if (this.formulario.valid) return '';
+    return 'botao_desabilitado';
   }
 }

@@ -1,8 +1,13 @@
 import { Component } from '@angular/core';
-import { FuncionarioService } from '../../form/funcionario.service';
+import { FuncionarioService } from '../funcionario.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Funcionario } from '../../form/criar-funcionario/funcionario';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Funcionario } from '../funcionario';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { UpperCasePipe } from '@angular/common';
 
 @Component({
@@ -11,7 +16,6 @@ import { UpperCasePipe } from '@angular/common';
   styleUrls: ['./editar.component.css'],
 })
 export class EditarComponent {
-
   formulario!: FormGroup;
 
   constructor(
@@ -26,23 +30,20 @@ export class EditarComponent {
     this.service.buscarPorId(parseInt(id!)).subscribe(
       (funcionario) =>
         (this.formulario = this.formBuilder.group({
-          id: [funcionario.id, Validators.compose([
-            Validators.required,
-          ])],
-          nome: [funcionario.nome, Validators.compose([
-            Validators.required,
-          ])],
-          sobrenome: [funcionario.sobrenome, Validators.compose([
-            Validators.required,
-          ])],
-          cpf: [funcionario.cpf, Validators.compose([
-            Validators.required,
-            Validators.minLength(11)
-          ])],
-          email: [funcionario.email, Validators.compose([
-            Validators.required,
-            Validators.email,
-          ])],
+          id: [funcionario.id, Validators.compose([Validators.required])],
+          nome: [funcionario.nome, Validators.compose([Validators.required])],
+          sobrenome: [
+            funcionario.sobrenome,
+            Validators.compose([Validators.required]),
+          ],
+          cpf: [
+            funcionario.cpf,
+            Validators.compose([Validators.required, Validators.minLength(11)]),
+          ],
+          email: [
+            funcionario.email,
+            Validators.compose([Validators.required, Validators.email]),
+          ],
         }))
     );
   }
@@ -55,9 +56,8 @@ export class EditarComponent {
     }
   }
 
-  desabilitarBotao(){
-    if (this.formulario.valid)
-      return ''
-    return 'botao_desabilitado'
+  desabilitarBotao() {
+    if (this.formulario.valid) return '';
+    return 'botao_desabilitado';
   }
 }

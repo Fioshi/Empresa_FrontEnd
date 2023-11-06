@@ -15,6 +15,10 @@ import { ListarComponent } from './components/funcionarios/listar/listar.compone
 import { EditarComponent } from './components/funcionarios/editar/editar.component';
 import { ExcluirComponent } from './components/funcionarios/excluir/excluir.component';
 import { BotaoCarregarMaisComponent } from './components/funcionarios/listar/botao-carregar-mais/botao-carregar-mais.component';
+import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CriarReuniaoComponent } from './components/form/criar-reuniao/criar-reuniao/criar-reuniao.component';
+import { OpcoesComponent } from './components/reunioes/opcoes/opcoes/opcoes.component';
+import { ListarReuniaoComponent } from './components/reunioes/listar/listar-reuniao/listar-reuniao.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +32,9 @@ import { BotaoCarregarMaisComponent } from './components/funcionarios/listar/bot
     EditarComponent,
     ExcluirComponent,
     BotaoCarregarMaisComponent,
+    CriarReuniaoComponent,
+    OpcoesComponent,
+    ListarReuniaoComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,9 +42,14 @@ import { BotaoCarregarMaisComponent } from './components/funcionarios/listar/bot
     FormsModule,
     RouterModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent],
+  exports: [
+    FontAwesomeModule
+  ]
 })
-export class AppModule {}
+export class AppModule {
+}

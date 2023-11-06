@@ -1,0 +1,6 @@
+.opcoes{
+  border-radius: 15px;
+  background-color: rgba(41, 51, 190, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(1px);
+}

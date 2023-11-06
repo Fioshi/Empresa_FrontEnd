@@ -1,46 +1,58 @@
-<div class="flex items-center justify-center flex-col p-10 bg-blue-200 h-fit listarContainer"
-  >
+<div class="flex items-center justify-center flex-col p-10 bg-blue-400 min-h-screen listarContainer">
   <div class="flex items-center justify-center buscar">
     <input
-      class="busca text-center"
+      class="busca text-center w-72"
       placeholder="Digite o CPF para busca"
       autofocus
       type="search"
       [(ngModel)]="filtro"
       (keyup)="buscarCpf()"
       >
-    <img class="lupa m-2" src="../../../../assets/imgs/lupa.png" alt="">
+    <img class="lupa m-2" src="../../../../assets/imgs/lupa.png" alt="imagem de lupa da pesquisa">
   </div>
-  <div *ngFor="let funcionario of listaFuncionario"
-    class="card w-96 m-5 h-48 flex items-center justify-center flex-col bg-blue-600 text-xl text-white rounded-md">
-    <p><b>ID: </b>{{funcionario.id}}</p>
-    <p><b>Nome: </b>{{funcionario.nome}} {{funcionario.sobrenome}}</p>
-    <p><b>Email: </b>{{funcionario.email}}</p>
-    <p><b>departamento: </b>{{funcionario.departamento}}</p>
-    <p><b>CPF: </b>{{funcionario.cpf}}</p>
-    <div *ngIf="funcionario.status, else desativado">
-      <button><img class="excluir" src="../../../../assets/imgs/excluir.png" alt="botão de excluir"
-          routerLink="/excluirFuncionario/{{funcionario.id}}"></button>
-      <button><img class="editar" src="../../../../assets/imgs/editar.png" alt="botão de editar"
-          routerLink="/editarFuncionario/{{funcionario.id}}"></button>
+  <div class="cards flex items-center justify-center">
+    <div *ngFor="let funcionario of listaFuncionario"
+      class="card w-96 m-5 h-48 flex items-center justify-center flex-col bg-blue-800 text-xl text-white rounded-md shadow-2xl">
+      <p><b>ID: </b>{{funcionario.id}}</p>
+      <p><b>Nome: </b>{{funcionario.nome}} {{funcionario.sobrenome}}</p>
+      <p><b>Email: </b>{{funcionario.email}}</p>
+      <p><b>departamento: </b>{{funcionario.departamento}}</p>
+      <p><b>reuniao: </b>{{funcionario.reuniao}}</p>
+      <p><b>CPF: </b>{{funcionario.cpf}}</p>
+      <div *ngIf="funcionario.status, else desativado">
+        <button><img class="excluir" src="../../../../assets/imgs/excluir.png" alt="botão de excluir"
+            routerLink="/excluirFuncionario/{{funcionario.id}}"></button>
+        <button><img class="editar" src="../../../../assets/imgs/editar.png" alt="botão de editar"
+            routerLink="/editarFuncionario/{{funcionario.id}}"></button>
+      </div>
+      <ng-template #desativado>
+        <p>Usuario desativado</p>
+      </ng-template>
     </div>
-    <ng-template #desativado>
-      <p>Usuario desativado</p>
-    </ng-template>
   </div>
-
+  <app-botao-carregar-mais class="botao" [haMaisFuncionarios]="haMaisFuncionarios" [filtro]="filtro" (click)="carregarMaisFuncionarios()">
+  </app-botao-carregar-mais>
+  <ng-template #semFuncionario>
+    <div>
+    </div>
+    <input
+    class="busca text-center"
+    placeholder="Digite o CPF para busca"
+    autofocus
+    type="search"
+    [(ngModel)]="filtro"
+    (keyup)="buscarCpf()"
+    >
+  <img class="lupa m-2" src="../../../../assets/imgs/lupa.png" alt="">
+    <div class="h-screen flex items-center justify-center bg-blue-200 listarContainer">
+      <div class="border w-1/8 m-5  flex items-center flex-col text-center bg-blue-600 text-white rounded-md">
+        <h2 class="text-2xl p-10">Aparentemente não há funcionarios na base de dados</h2>
+        <button
+          class="m-10 bg-blue-200 text-3xl text-white m-6 p-2 bg-blue-500 rounded-lg hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
+          routerLink="/cadastrarFuncionario">
+          Cadastrar
+        </button>
+      </div>
+    </div>
+  </ng-template>
 </div>
-<app-botao-carregar-mais [haMaisFuncionarios]="haMaisFuncionarios" (click)="carregarMaisFuncionarios()">
-</app-botao-carregar-mais>
-<!-- <ng-template #semFuncionario>
-  <div class="h-screen flex items-center justify-center bg-blue-200 listarContainer">
-    <div class="border w-1/8 m-5  flex items-center flex-col text-center bg-blue-600 text-white rounded-md">
-      <h2 class="text-2xl p-10">Aparentemente não há funcionarios na base de dados</h2>
-      <button
-        class="m-10 bg-blue-200 text-3xl text-white m-6 p-2 bg-blue-500 rounded-lg hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
-        routerLink="/cadastrarFuncionario">
-        Cadastrar
-      </button>
-    </div>
-  </div>
-</ng-template> -->

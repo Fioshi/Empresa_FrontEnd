@@ -1,3 +1,17 @@
+.mainContainerImg{
+  background-image: url(../../../assets/imgs/main_1jpg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.conteudo {
+  border-radius: 15px;
+  background-color: rgba(41, 51, 190, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(1px);
+}
+
 @media screen and (max-width: 762px ) {
   .mainContainer{
     height: 100em;

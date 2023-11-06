@@ -1,16 +1,32 @@
 .listarContainer{
-  height: 100vh;
   flex-wrap: wrap;
-  position: relative;
+}
+
+.desativado {
+  background-color: gray;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 1rem;
+}
+
+.botao {
+  bottom: 1px;
 }
 
 .lupa {
   width: 30px;
+  position: absolute;
+  right: 15px;
 }
 
 .buscar{
   position: absolute;
-  top: 40px;
+  top: 100px;
+  margin: 0.2rem;
 }
 
 .buscar input{

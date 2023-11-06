@@ -1,0 +1,9 @@
+<section class="flex items-center justify-center flex-row p-10 bg-blue-400 min-h-screen">
+  <div class="w-96 m-5 h-48 flex items-center justify-center flex-col bg-blue-800 text-xl text-white rounded-md shadow-2xl"
+  *ngFor="let reuniao of reunioes">
+    <p *ngIf="reuniao.status == true, else completo"><b>Status: </b>Pendente</p>
+    <ng-template #completo><p><b>Status: </b>Completo</p></ng-template>
+    <p><b>Data e Hora: </b>{{reuniao.horario}}</p>
+    <p><b>Motivo: </b>{{reuniao.tipo}}</p>
+  </div>
+</section>

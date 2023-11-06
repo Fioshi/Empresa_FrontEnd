@@ -1,12 +1,14 @@
-<div class="flex items-center justify-center flex-col p-10 bg-blue-200" *ngIf="haMaisFuncionarios, else semMaisFuncionarios">
+<div class="flex items-center justify-center flex-col bg-blue-100 w-1 h-1 m-10 shadow-2xl" *ngIf="haMaisFuncionarios, else semMaisFuncionarios">
   <span>
     <button
-      class="btn text-white m-6 p-2 bg-blue-600 rounded-lg hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 w-24">Carregar Mais
+      class="btn text-white m-6 p-2 bg-blue-800 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 w-24"
+      [disabled]="oi()"
+      [ngClass]="desativado()">Carregar Mais
     </button>
     </span>
 </div>
 <ng-template #semMaisFuncionarios>
-  <div class="flex items-center justify-center flex-col p-10 bg-blue-200">
-    <p>Sem mais funcionarios na base de dados</p>
+  <div class="flex items-center justify-center flex-col p-10 bg-blue-400">
+    <p class="text-2xl">Sem mais funcionarios na base de dados</p>
   </div>
 </ng-template>

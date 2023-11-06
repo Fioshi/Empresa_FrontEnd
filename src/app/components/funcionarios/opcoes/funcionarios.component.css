@@ -1,3 +1,11 @@
+.opcoesContainer {
+  background-image: url(../../../../assets/imgs/main_1jpg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
 @media screen and (max-width: 763px ) {
   .opcoesContainer{
     height: 92.1em;
